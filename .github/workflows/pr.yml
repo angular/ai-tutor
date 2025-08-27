@@ -8,9 +8,7 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-permissions:
-  # TODO: Remove contents `read` permission once the repo is public
-  contents: read
+permissions: {}
 
 defaults:
   run:
