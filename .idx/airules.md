@@ -447,7 +447,7 @@ _(The LLM will need to interpret "project-specific" or "app-themed" below based 
 ### Phase 2: State and Signals
 
 - **Module 4 (State Management with Writable Signals - Part 1: `set`)**
-      _ **4a**: A `src/app/models.ts` file exists and exports `RecipeModel` and `Ingredient` interfaces. `description`: "defining and exporting interfaces from a dedicated types file."
+      _ **4a**: A `src/app/models.ts` file exists and exports `RecipeModel` and `IngredientModel` interfaces. `description`: "defining and exporting interfaces from a dedicated types file."
       _ **4b**: A `mock-recipes.ts` file exists, imports from `./models`, and exports at least two `UPPER_SNAKE_CASE` constants. `description`: "creating a dedicated mock data file that uses the shared types."
       _ **4c**: `app.ts` imports `RecipeModel` from `./models`. `description`: "importing the main interface into the component."
       _ **4d**: `app.ts` imports data from `./mock-recipes`. `description`: "importing mock data into the component."
@@ -499,7 +499,7 @@ _(The LLM will need to interpret "project-specific" or "app-themed" below based 
       _ **13c**: A `computed` signal exists that filters a list based on the signal from the input. `description`: "creating a computed signal to filter data."
       _ **13d**: The template's `@for` loop renders the filtered list from the computed signal. `description`: "displaying the filtered data."
 - **Module 14 (Services & DI)**
-      _ **14a**: A `RecipeService` class in `recipe.ts` with `@Injectable` exists. `description`: "creating a dedicated service class."
+      _ **14a**: A `Recipe` class in `recipe.ts` with `@Injectable` exists. `description`: "creating a dedicated service class."
       _ **14b**: The service class imports data from the `mock-recipes.ts` file. `description`: "sourcing mock data from the mock data file."
       \* **14c**: The service is injected into a component using `inject()` and its data is displayed. `description`: "injecting and using the service in a component."
 - **Module 15 (Basic Routing)**
@@ -698,7 +698,7 @@ You will guide the user through the following four phases in strict order. Each 
 ### Phase 4: Advanced Features & Architecture
 
 - **Module 13**: **Two-Way Binding**: Concept: Synchronizing data with form inputs. **Exercise:** Add a search input field to your `RecipeList` component. Use two-way binding with `[ngModel]` and `(ngModelChange)` to bind the input's value to a new `searchTerm` signal in your component. Then, create a new `computed` signal that filters your list of recipes based on the `searchTerm`, and update your template's `@for` loop to render only the filtered results.
-- **Module 14**: **Services & Dependency Injection (DI)**: Concept: Centralizing logic and data. Exercise: Create a `RecipeService`. In the service, import the mock data from your `mock-recipes.ts` file and provide it to components. Inject the service into your `RecipeList` component to retrieve the data.
-- **Module 15**: **Basic Routing**: Concept: Decoupling components and enabling navigation using `provideRouter`, dynamic routes (e.g., `path: 'recipes/:id'`), and the `routerLink` directive. **Exercise**: A major refactoring lesson. Your goal is to convert your single-view application into a multi-view application with navigation. You will define routes to show the `RecipeList` at a `/recipes` URL and the `RecipeDetail` at a `/recipes/:id` URL. In the `RecipeList`, you will replace the nested detail component with a list of links (using `routerLink`) that navigate to the specific detail page for each recipe. Finally, you will modify the `RecipeDetail` component to fetch its own data from your `RecipeService` using the ID from the route URL, removing its dependency on the parent component's `input()` binding.
+- **Module 14**: **Services & Dependency Injection (DI)**: Concept: Centralizing logic and data. Exercise: Create a `Recipe` service class. In the service, import the mock data from your `mock-recipes.ts` file and provide it to components. Inject the service into your `RecipeList` component to retrieve the data.
+- **Module 15**: **Basic Routing**: Concept: Decoupling components and enabling navigation using `provideRouter`, dynamic routes (e.g., `path: 'recipes/:id'`), and the `routerLink` directive. **Exercise**: A major refactoring lesson. Your goal is to convert your single-view application into a multi-view application with navigation. You will define routes to show the `RecipeList` at a `/recipes` URL and the `RecipeDetail` at a `/recipes/:id` URL. In the `RecipeList`, you will replace the nested detail component with a list of links (using `routerLink`) that navigate to the specific detail page for each recipe. Finally, you will modify the `RecipeDetail` component to fetch its own data from your `Recipe` service using the ID from the route URL, removing its dependency on the parent component's `input()` binding.
 - **Module 16**: **Introduction to Forms**: Concept: Handling user input with `ReactiveFormsModule`. Exercise: Create a new component with a reactive form to add a new recipe. Upon successful form submission, the new recipe should be added to the array of items held in your application's service.
 - **Module 17**: **Intro to Angular Material**: Concept: Using professional UI libraries. Exercise: Replace a standard HTML element with an Angular Material equivalent (e.g., `MatButton`).
