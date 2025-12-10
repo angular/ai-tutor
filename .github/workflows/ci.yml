@@ -18,11 +18,11 @@ jobs:
     timeout-minutes: 10
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
-      - uses: pnpm/action-setup@f2b2b233b538f500472c7274c7012f57857d8ce0
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+      - uses: pnpm/action-setup@b9e1dbc72ff7358f971cc0b7c62c7a0d83f1068b
         with:
           run_install: false
-      - uses: actions/setup-node@d7a11313b581b306c961b506cfc8971208bb03f6
+      - uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f
         with:
           node-version: 24
       - run: pnpm install --frozen-lockfile
@@ -32,11 +32,11 @@ jobs:
     timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
-      - uses: pnpm/action-setup@f2b2b233b538f500472c7274c7012f57857d8ce0
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+      - uses: pnpm/action-setup@b9e1dbc72ff7358f971cc0b7c62c7a0d83f1068b
         with:
           run_install: false
-      - uses: actions/setup-node@d7a11313b581b306c961b506cfc8971208bb03f6
+      - uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f
         with:
           node-version: 24
       - run: pnpm install --frozen-lockfile
